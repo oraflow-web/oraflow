@@ -1,2 +1,1 @@
-// Shared UI components
-// Add exports here as components are created
+export { Header, Footer } from "./components";
