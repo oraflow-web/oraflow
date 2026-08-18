@@ -9,7 +9,9 @@ export default async function BlogDetailPage({ params }: Props) {
     <main>
       <article>
         <h1>Blog: {slug}</h1>
-        <p>Kategorija: {category} — lang: {lang}</p>
+        <p>
+          Kategorija: {category} — lang: {lang}
+        </p>
       </article>
     </main>
   );

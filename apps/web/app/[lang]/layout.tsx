@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locales } from "@oraflow/i18n";
-import { Header, Footer } from "@oraflow/ui";
+import { Header } from "@oraflow/ui/shell/header";
+import { Footer } from "@oraflow/ui/shell/footer";
 import "@/styles/globals.scss";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default async function LangLayout({ children, params }: Props) {
   const { lang } = await params;
 
   return (
-    <div data-lang={lang}>
+    <div data-lang={lang} className="wrap">
       <Header lang={lang} />
       <main>{children}</main>
       <Footer />

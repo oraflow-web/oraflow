@@ -39,21 +39,21 @@ pnpm build
 
 ## Routes
 
-| Route | Description |
-|-------|-------------|
-| `/sr` | Home (Serbian) |
-| `/de` | Home (German) |
-| `/sr/[category]` | Blog list by category |
-| `/sr/[category]/[slug]` | Blog post detail |
-| `/studio` | Sanity Studio (CMS) |
+| Route                   | Description           |
+| ----------------------- | --------------------- |
+| `/sr`                   | Home (Serbian)        |
+| `/de`                   | Home (German)         |
+| `/sr/[category]`        | Blog list by category |
+| `/sr/[category]/[slug]` | Blog post detail      |
+| `/studio`               | Sanity Studio (CMS)   |
 
 ## pnpm cheat sheet
 
-| npm | pnpm |
-|-----|------|
-| `npm install` | `pnpm install` |
-| `npm install package` | `pnpm add package` |
-| `npm install -D package` | `pnpm add -D package` |
-| `npm run dev` | `pnpm dev` |
-| `npm run build` | `pnpm build` |
-| `npx something` | `pnpm exec something` or `pnpm dlx something` |
+| npm                      | pnpm                                          |
+| ------------------------ | --------------------------------------------- |
+| `npm install`            | `pnpm install`                                |
+| `npm install package`    | `pnpm add package`                            |
+| `npm install -D package` | `pnpm add -D package`                         |
+| `npm run dev`            | `pnpm dev`                                    |
+| `npm run build`          | `pnpm build`                                  |
+| `npx something`          | `pnpm exec something` or `pnpm dlx something` |
