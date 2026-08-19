@@ -16,7 +16,7 @@ type ImageWithFallbackProps = {
 };
 
 /**
- * Image component with a loading shimmer state and fallback for broken/missing images.
+ * Image component with a loading state and fallback for broken/missing images.
  *
  * Note: the parent element should have `position: relative` and defined dimensions
  * for the shimmer overlay to display correctly.
@@ -42,16 +42,9 @@ export function ImageWithFallback({
 
   if (hasError || !src) {
     return (
-      <div
-        className="image-with-fallback__placeholder"
-        role="img"
-        aria-label={alt}
-        style={{ width, height }}
-      >
-        <span className="image-with-fallback__placeholder-text">
-          {fallbackText ?? alt}
-        </span>
-      </div>
+      <span className="image-with-fallback__placeholder">
+        {fallbackText ?? alt}
+      </span>
     );
   }
 
@@ -59,7 +52,7 @@ export function ImageWithFallback({
     <>
       {isLoading && (
         <span
-          className="image-with-fallback__shimmer"
+          className="image-with-fallback__loader"
           aria-hidden="true"
           style={{ width, height }}
         />

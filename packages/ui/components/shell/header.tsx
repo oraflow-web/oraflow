@@ -8,18 +8,16 @@ type HeaderProps = {
 export function Header({ lang }: HeaderProps) {
   return (
     <header className="header">
-      <div className="header__container">
         <Link href={`/${lang}`} className="header__logo">
           <ImageWithFallback
             src="/logo.jpeg"
             alt="OraFlow"
-            width={48}
-            height={48}
+            width={52}
+            height={52}
             unoptimized
           />
         </Link>
-        <nav className="header__nav">{/* Navigation items go here */}</nav>
-      </div>
+        <nav className="header__nav">Navigation items go here</nav>
     </header>
   );
 }

@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  transpilePackages: ["@oraflow/ui", "@oraflow/sanity", "@oraflow/i18n"],
   images: {
     remotePatterns: [
       {
