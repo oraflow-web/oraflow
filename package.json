@@ -1,16 +1,12 @@
 {
   "name": "oraflow",
+  "version": "1.0.0",
+  "description": "",
   "private": true,
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
-    "lint": "turbo lint",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
-  },
-  "devDependencies": {
-    "prettier": "^3.4.0",
-    "turbo": "^2.5.0"
-  },
-  "packageManager": "pnpm@9.15.4"
+    "dev:web": "pnpm --filter web dev",
+    "dev:studio": "pnpm --filter studio dev",
+    "build:web": "pnpm --filter web build",
+    "build:studio": "pnpm --filter studio build"
+  }
 }
