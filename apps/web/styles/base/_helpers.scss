@@ -1,0 +1,5 @@
+@use "../abstracts/mixins" as *;
+
+.sr-only {
+  @include visually-hidden;
+}

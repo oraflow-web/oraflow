@@ -1,0 +1,14 @@
+@use "../abstracts" as *;
+
+ul {
+  padding-left: 20px;
+}
+ol {
+  padding-left: 20px;
+}
+ul li {
+  list-style-type: disc;
+}
+ol li {
+  list-style-type: decimal-leading-zero;
+}
