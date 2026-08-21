@@ -1,12 +1,29 @@
 {
   "name": "oraflow",
   "version": "1.0.0",
-  "description": "",
   "private": true,
+  "packageManager": "pnpm@11.22.0",
   "scripts": {
     "dev:web": "pnpm --filter web dev",
     "dev:studio": "pnpm --filter studio dev",
     "build:web": "pnpm --filter web build",
-    "build:studio": "pnpm --filter studio build"
+    "build:studio": "pnpm --filter studio build",
+    "typecheck": "pnpm --filter web typecheck && pnpm --filter studio typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs,json,md,scss,css,yaml,yml,html}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "prettier": "^3.9.6"
+  },
+  "engines": {
+    "node": ">=24"
   }
 }

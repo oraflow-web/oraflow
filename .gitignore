@@ -16,6 +16,9 @@ out/
 .env
 .env*.local
 
+# coverage
+coverage/
+
 # vercel
 .vercel
 

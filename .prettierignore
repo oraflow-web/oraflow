@@ -1,0 +1,10 @@
+node_modules
+.next
+.turbo
+dist
+pnpm-lock.yaml
+out
+coverage
+.vercel
+public/
+.husky/
