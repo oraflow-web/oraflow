@@ -17,8 +17,8 @@ export default async function HomePage({ params }: Props) {
         unoptimized
         className="footer__logo"
       />
-      <h2>OraFlow</h2>
-      <h2>Dobrodošli — lang: {lang}</h2>
+      <h2>OraFlow v2</h2>
+      <h2>Dobrodošli - lang: {lang}</h2>
     </main>
   );
 }
