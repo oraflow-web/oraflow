@@ -14,15 +14,15 @@ export function AppLink({ href, children, className, ...props }: AppLinkProps) {
       <a
         href={href}
         className={className}
-        {...(isNewTab && { target: '_blank', rel: 'noopener noreferrer' })}
         {...props}
+        {...(isNewTab && { target: '_blank', rel: 'noopener noreferrer' })}
       >
         {children}
       </a>
     );
   }
   return (
-    <Link href={href} className={'link'} {...props}>
+    <Link href={href} className={className} {...props}>
       {children}
     </Link>
   );

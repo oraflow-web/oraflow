@@ -1,3 +1,4 @@
+import { AppLink } from '../elements/app-link';
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -6,16 +7,24 @@ export function Footer() {
       <nav>
         <ul className="nav-ul">
           <li>
-            <a href="/">Impressum</a>
+            <AppLink className="link" href="/">
+              Impressum
+            </AppLink>
           </li>
           <li>
-            <a href="/">Politika privatnosti</a>
+            <AppLink className="link" href="/">
+              Politika privatnosti
+            </AppLink>
           </li>
           <li>
-            <a href="/">Cookie</a>
+            <AppLink className="link" href="/">
+              Cookie
+            </AppLink>
           </li>
           <li>
-            <a href="/">Disclaimer</a>
+            <AppLink className="link" href="/">
+              Disclaimer
+            </AppLink>
           </li>
         </ul>
       </nav>

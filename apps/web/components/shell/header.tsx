@@ -1,24 +1,13 @@
-'use client';
 import Link from 'next/link';
 import { ImageWithFallback } from '../elements/image-with-fallback';
-import { Select } from '../elements/select';
 import { AppLink } from '../elements/app-link';
+import { LanguageSwitcher } from './language-switcher';
 
 type HeaderProps = {
   lang: string;
 };
 
 export function Header({ lang }: HeaderProps) {
-  const languages = [
-    {
-      text: 'srpski',
-      value: 'sr',
-    },
-    {
-      text: 'nemacki',
-      value: 'de',
-    },
-  ];
   return (
     <header className="header">
       <Link href={`/${lang}`} className="header__logo">
@@ -33,16 +22,11 @@ export function Header({ lang }: HeaderProps) {
       <nav className="header__nav">
         <ul className="nav-ul">
           <li>
-            <AppLink href="/" children="ovde idu kategorije 2" />
+            <AppLink href="/">ovde idu kategorije</AppLink>
           </li>
         </ul>
       </nav>
-      <Select
-        selectID="language"
-        label="Odaberite jezik"
-        options={languages}
-        onChange={(e) => console.log(e)}
-      />
+      <LanguageSwitcher lang="sr" path="" />
     </header>
   );
 }
