@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
-import { locales, defaultLocale } from "./i18n/config";
+import { NextRequest, NextResponse } from 'next/server';
+import { locales, defaultLocale } from './i18n/config';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -16,5 +16,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|favicon.ico|.*\\..*).*)"],
+  matcher: ['/((?!_next|api|favicon.ico|.*\\..*).*)'],
 };

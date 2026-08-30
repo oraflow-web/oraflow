@@ -1,6 +1,13 @@
-$font-default: arial, sans-serif;
+$font-default: Helvetica, Arial, sans-serif;
 
 // Colors
 $white: #fff;
 $black: #000;
-$grey: #5b6770;
+
+$dark-primary: #1e2b24; // text
+$dark-secondary: #343936; // headings ovo isto boja iz palete
+$light-primary: #f7f3ec; // bg
+$light-secondary: #ded2c2; // bg secondary
+$primary: #607568; // naslovi ali poor kontrast mozda na beloj
+$main: #a8b9a5; // 20% druga glavna -> moze crna
+$accent: #d5a08f; // akcetna boja

@@ -1,8 +1,8 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 button,
-input[type="button"],
-input[type="submit"] {
+input[type='button'],
+input[type='submit'] {
   background: none;
   border: 0;
   cursor: pointer;
@@ -15,6 +15,14 @@ button {
   appearance: none;
   outline: none;
   @include focus {
-    outline: 1px dashed $grey;
+    outline: 1px dashed $black;
   }
+}
+
+.link {
+  color: $black;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Header } from "@/components/shell/header";
-import { Footer } from "@/components/shell/footer";
+import type { Metadata } from 'next';
+import { Header } from '@/components/shell/header';
+import { Footer } from '@/components/shell/footer';
 export const metadata: Metadata = {
-  title: "OraFlow",
-  description: "Oral health, function, growth — educational dental blog",
+  title: 'OraFlow',
+  description: 'Oral health, function, growth — educational dental blog',
 };
 
 export default async function LangLayout({

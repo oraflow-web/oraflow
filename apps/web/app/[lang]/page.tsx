@@ -1,4 +1,4 @@
-import { ImageWithFallback } from "@/components/elements/image-with-fallback";
+import { ImageWithFallback } from '@/components/elements/image-with-fallback';
 type Props = {
   params: Promise<{ lang: string }>;
 };
