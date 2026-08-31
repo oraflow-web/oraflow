@@ -8,3 +8,32 @@
   gap: 1rem;
   padding: 1rem 0;
 }
+
+.language-switcher {
+  position: relative;
+  &__list {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: $white;
+    border: 1px solid $black;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+  &[open] {
+    .language-switcher__list {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}

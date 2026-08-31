@@ -23,18 +23,18 @@ export function Select({
   const defaultValue = placeholder ? '' : options[0].value;
   return (
     <>
-      <label className="sr-only" htmlFor={selectID}>
+      <label className='sr-only' htmlFor={selectID}>
         {label}
       </label>
       <select
-        className="select"
+        className='select'
         name={selectID}
         id={selectID}
         defaultValue={defaultValue}
         onChange={(e) => onChange(e.target.value)}
       >
         {placeholder && (
-          <option value="" disabled hidden>
+          <option value='' disabled hidden>
             {placeholder}
           </option>
         )}

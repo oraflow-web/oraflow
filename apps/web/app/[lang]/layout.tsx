@@ -18,7 +18,7 @@ export default async function LangLayout({
   return (
     <html lang={lang}>
       <body>
-        <div className="wrap">
+        <div className='wrap'>
           <Header lang={lang} />
           {children}
           <Footer />

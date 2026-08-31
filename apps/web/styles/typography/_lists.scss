@@ -1,15 +1,15 @@
 @use '../abstracts' as *;
 
-ul {
+.ul {
   padding-left: 20px;
 }
-ol {
+.ol {
   padding-left: 20px;
 }
-ul li {
+.ul li {
   list-style-type: disc;
 }
-ol li {
+.ol li {
   list-style-type: decimal-leading-zero;
 }
 
@@ -17,7 +17,4 @@ ol li {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  li {
-    list-style-type: none;
-  }
 }

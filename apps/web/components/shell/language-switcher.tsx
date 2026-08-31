@@ -9,11 +9,11 @@ export function LanguageSwitcher({
   path: string;
 }) {
   return (
-    <details className="language-switcher">
+    <details className='language-switcher'>
       <summary>{localeLabels[lang as keyof typeof localeLabels]}</summary>
-      <ul>
+      <ul className='language-switcher__list'>
         {locales.map((code) => (
-          <li key={code}>
+          <li key={code} className='language-switcher__item'>
             <AppLink
               href={`/${code}${path}`}
               aria-current={code === lang ? 'page' : undefined}

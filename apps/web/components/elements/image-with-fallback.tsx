@@ -42,7 +42,7 @@ export function ImageWithFallback({
 
   if (hasError || !src) {
     return (
-      <span className="image-with-fallback__placeholder">
+      <span className='image-with-fallback__placeholder'>
         {fallbackText ?? alt}
       </span>
     );
@@ -52,8 +52,8 @@ export function ImageWithFallback({
     <>
       {isLoading && (
         <span
-          className="image-with-fallback__loader"
-          aria-hidden="true"
+          className='image-with-fallback__loader'
+          aria-hidden='true'
           style={{ width, height }}
         />
       )}

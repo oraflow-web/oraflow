@@ -3,9 +3,16 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 interface AppLinkProps extends ComponentPropsWithoutRef<'a'> {
   href: string;
+  lang?: string;
 }
 
-export function AppLink({ href, children, className, ...props }: AppLinkProps) {
+export function AppLink({
+  href,
+  lang,
+  children,
+  className,
+  ...props
+}: AppLinkProps) {
   const isNewTab = href.startsWith('http://') || href.startsWith('https://');
   const isExternal =
     isNewTab || href.startsWith('mailto:') || href.startsWith('tel:');
@@ -21,8 +28,11 @@ export function AppLink({ href, children, className, ...props }: AppLinkProps) {
       </a>
     );
   }
+
+  const localizedHref = lang ? `/${lang}${href}` : href;
+
   return (
-    <Link href={href} className={className} {...props}>
+    <Link href={localizedHref} className={className} {...props}>
       {children}
     </Link>
   );

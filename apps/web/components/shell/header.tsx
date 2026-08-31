@@ -2,31 +2,39 @@ import Link from 'next/link';
 import { ImageWithFallback } from '../elements/image-with-fallback';
 import { AppLink } from '../elements/app-link';
 import { LanguageSwitcher } from './language-switcher';
+import { getCategories } from '@/lib/sanity/queries';
+import type { Category } from '@/lib/sanity/types';
 
 type HeaderProps = {
   lang: string;
 };
 
-export function Header({ lang }: HeaderProps) {
+export async function Header({ lang }: HeaderProps) {
+  const categories: Category[] = await getCategories(lang);
+
   return (
-    <header className="header">
-      <Link href={`/${lang}`} className="header__logo">
+    <header className='header'>
+      <Link href={`/${lang}`} className='header__logo'>
         <ImageWithFallback
-          src="/logo.jpeg"
-          alt="OraFlow"
+          src='/logo.jpeg'
+          alt='OraFlow'
           width={52}
           height={52}
           unoptimized
         />
       </Link>
-      <nav className="header__nav">
-        <ul className="nav-ul">
-          <li>
-            <AppLink href="/">ovde idu kategorije</AppLink>
-          </li>
+      <nav className='header__nav'>
+        <ul className='nav-ul'>
+          {categories.map((category) => (
+            <li key={category._id}>
+              <AppLink href={`/${category.slug}`} lang={lang}>
+                {category.title}
+              </AppLink>
+            </li>
+          ))}
         </ul>
       </nav>
-      <LanguageSwitcher lang="sr" path="" />
+      <LanguageSwitcher lang={lang} path='' />
     </header>
   );
 }
