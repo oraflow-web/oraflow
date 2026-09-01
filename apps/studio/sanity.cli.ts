@@ -5,6 +5,7 @@ export default defineCliConfig({
     projectId: 'awd005lt',
     dataset: 'production',
   },
+  studioHost: 'oraflow',
   deployment: {
     /**
      * Enable auto-updates for studios.
