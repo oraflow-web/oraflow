@@ -1,6 +1,10 @@
 # dependencies
 node_modules/
 
+# non-pnpm lockfiles (this repo uses pnpm)
+package-lock.json
+yarn.lock
+
 # next.js
 .next/
 out/
