@@ -1,16 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { locales, defaultLocale } from './i18n/config';
+import { langs, defaultLang } from './i18n/config';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const hasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+  const hasLang = langs.some(
+    (lang) => pathname.startsWith(`/${lang}/`) || pathname === `/${lang}`,
   );
 
-  if (!hasLocale) {
+  if (!hasLang) {
     const url = request.nextUrl.clone();
-    url.pathname = `/${defaultLocale}${pathname}`;
+    url.pathname = `/${defaultLang}${pathname}`;
     return NextResponse.redirect(url);
   }
 }

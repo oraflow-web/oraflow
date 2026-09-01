@@ -1,4 +1,4 @@
-import { locales, localeLabels } from '../../i18n/config';
+import { langs, langLabels } from '../../i18n/config';
 import { AppLink } from '../elements/app-link';
 
 export function LanguageSwitcher({
@@ -10,15 +10,15 @@ export function LanguageSwitcher({
 }) {
   return (
     <details className='language-switcher'>
-      <summary>{localeLabels[lang as keyof typeof localeLabels]}</summary>
+      <summary>{langLabels[lang as keyof typeof langLabels]}</summary>
       <ul className='language-switcher__list'>
-        {locales.map((code) => (
+        {langs.map((code) => (
           <li key={code} className='language-switcher__item'>
             <AppLink
               href={`/${code}${path}`}
               aria-current={code === lang ? 'page' : undefined}
             >
-              {localeLabels[code]}
+              {langLabels[code]}
             </AppLink>
           </li>
         ))}

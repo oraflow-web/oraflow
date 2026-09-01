@@ -1,9 +1,9 @@
-export const locales = ['sr', 'de'] as const;
-export const defaultLocale = 'sr';
+export const langs = ['sr', 'de'] as const;
+export const defaultLang = 'sr';
 
-export type Locale = (typeof locales)[number];
+export type Lang = (typeof langs)[number];
 
-export const localeLabels: Record<Locale, string> = {
+export const langLabels: Record<Lang, string> = {
   sr: 'Srpski',
   de: 'Deutsch',
 };
