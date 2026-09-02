@@ -14,15 +14,44 @@ a,
 button {
   appearance: none;
   outline: none;
+  outline-offset: 2px;
   @include focus {
-    outline: 1px dashed $black;
+    outline: 1px solid $core;
   }
 }
 
 .link {
-  color: $black;
+  color: $core;
   font-size: 16px;
   font-weight: 400;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: $radius-sm;
+  border-width: 2px;
+  border-style: solid;
+  min-width: 10rem;
+  max-width: 100%;
+  &--primary {
+    color: $core;
+    background-color: $secondary;
+    border-color: transparent;
+  }
+  &--secondary {
+    color: $surface;
+    background-color: $core-brand;
+    border-color: transparent;
+  }
+  &--outline {
+    color: $core;
+    background-color: $surface-brand;
+    border-color: $primary;
+  }
 }

@@ -23,11 +23,15 @@ export async function Header({ lang }: HeaderProps) {
           unoptimized
         />
       </Link>
-      <nav className='header__nav'>
-        <ul className='nav-ul'>
+      <nav className='nav'>
+        <ul className='nav__list'>
           {categories.map((category) => (
-            <li key={category._id}>
-              <AppLink href={`/${category.slug}`} lang={lang}>
+            <li className='nav__item' key={category._id}>
+              <AppLink
+                className='btn btn--primary'
+                href={`/${category.slug}`}
+                lang={lang}
+              >
                 {category.title}
               </AppLink>
             </li>

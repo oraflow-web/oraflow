@@ -2,13 +2,13 @@
 
 input,
 textarea {
-  background: $white;
+  background: $surface;
   border-radius: 0;
   box-shadow: none;
-  color: $black;
+  color: $core;
   height: 25px;
   padding: 0 10px;
   &::placeholder {
-    color: $black;
+    color: $core;
   }
 }

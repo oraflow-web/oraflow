@@ -10,18 +10,28 @@ export function LanguageSwitcher({
 }) {
   return (
     <details className='language-switcher'>
-      <summary>{langLabels[lang as keyof typeof langLabels]}</summary>
+      <summary className='btn btn--outline'>
+        {langLabels[lang as keyof typeof langLabels]}
+      </summary>
       <ul className='language-switcher__list'>
-        {langs.map((code) => (
-          <li key={code} className='language-switcher__item'>
-            <AppLink
-              href={`/${code}${path}`}
-              aria-current={code === lang ? 'page' : undefined}
-            >
-              {langLabels[code]}
-            </AppLink>
-          </li>
-        ))}
+        {langs.map((code) => {
+          const linkClass =
+            code === lang
+              ? 'language-switcher__link active'
+              : 'language-switcher__link';
+          const ariaCurrent = code === lang ? 'page' : undefined;
+          return (
+            <li key={code} className='language-switcher__item'>
+              <AppLink
+                className={linkClass}
+                href={`/${code}${path}`}
+                aria-current={ariaCurrent}
+              >
+                {langLabels[code]}
+              </AppLink>
+            </li>
+          );
+        })}
       </ul>
     </details>
   );

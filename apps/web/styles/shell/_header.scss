@@ -9,18 +9,38 @@
   padding: 1rem 0;
 }
 
+.nav {
+  &__list {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
 .language-switcher {
   position: relative;
   &__list {
     position: absolute;
-    top: 100%;
+    top: 102%;
     width: 100%;
-    padding: 0.5rem;
-    background-color: $white;
-    border: 1px solid $black;
+    background-color: $surface;
+    border: 2px solid $primary;
+    border-radius: $radius-sm;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
+    overflow: hidden;
+  }
+  &__link {
+    display: block;
+    padding: 1rem 1.5rem;
+    transition: background-color 0.3s ease;
+    &.active {
+      pointer-events: none;
+      background-color: $surface-brand;
+    }
+    @include hover {
+      background-color: $surface-brand-secondary;
+    }
   }
   &[open] {
     .language-switcher__list {
@@ -29,7 +49,6 @@
     }
   }
   summary {
-    list-style: none;
     cursor: pointer;
     &::marker,
     &::-webkit-details-marker {

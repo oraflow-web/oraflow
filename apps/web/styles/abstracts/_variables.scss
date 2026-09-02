@@ -1,13 +1,47 @@
 $font-default: Helvetica, Arial, sans-serif;
 
-// Colors
-$white: #fff;
-$black: #000;
+:root {
+  --core: #000000;
+  --surface: #ffffff;
+  --surface-brand: #f7f3ec;
+  --surface-brand-secondary: #ded2c2;
+  --core-brand: #343936;
+  --primary: #607568;
+  --secondary: #a8b9a5;
+  --accent: #d5a08f;
+}
 
-$dark-primary: #1e2b24; // text
-$dark-secondary: #343936; // headings ovo isto boja iz palete
-$light-primary: #f7f3ec; // bg
-$light-secondary: #ded2c2; // bg secondary
-$primary: #607568; // naslovi ali poor kontrast mozda na beloj
-$main: #a8b9a5; // 20% druga glavna -> moze crna
-$accent: #d5a08f; // akcetna boja
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --core: #ffffff;
+    --surface: #000000;
+    --surface-brand: #343936;
+    --core-brand: #f7f3ec;
+    //--surface-brand-secondary: #ded2c2;
+    --primary: #a8b9a5;
+    --secondary: #607568;
+    --accent: #d5a08f;
+  }
+} */
+
+// Colors
+$surface: var(--surface);
+$core: var(--core);
+$core-brand: var(--core-brand);
+$surface-brand: var(--surface-brand);
+$surface-brand-secondary: var(--surface-brand-secondary);
+$primary: var(--primary);
+$secondary: var(--secondary);
+$accent: var(--accent);
+
+//$dark: #343936; // headings ovo isto boja iz palete
+//$light-primary: #f7f3ec; // bg
+//$light-secondary: #ded2c2; // bg secondary
+//$primary: #607568; // naslovi ali poor kontrast mozda na beloj
+//$secondary: #a8b9a5; // 20% druga glavna -> moze crna
+//$accent: #d5a08f; // akcetna boja
+
+$radius-sm: 0.5rem;
+$radius-md: 1rem;
+$radius-lg: 1.5rem;
+$radius-xl: 2rem;
