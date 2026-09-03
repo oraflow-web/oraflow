@@ -2,9 +2,15 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { urlFor } from '@/lib/sanity/image';
 
 type ImageWithFallbackProps = {
-  src: string;
+  /**
+   * Either a plain image URL, or a raw Sanity image source when
+   * `isSanityImage` is set. When a Sanity source is passed the URL is
+   * built internally via `urlFor`, sized to `width`/`height`.
+   */
+  src: string | Record<string, unknown> | null | undefined;
   alt: string;
   width: number;
   height: number;
@@ -13,6 +19,8 @@ type ImageWithFallbackProps = {
   className?: string;
   fallbackText?: string;
   unoptimized?: boolean;
+  /** Treat `src` as a raw Sanity image source and build the URL with `urlFor`. */
+  isSanityImage?: boolean;
 };
 
 /**
@@ -31,16 +39,24 @@ export function ImageWithFallback({
   className,
   fallbackText,
   unoptimized = false,
+  isSanityImage = false,
 }: ImageWithFallbackProps) {
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const resolvedSrc =
+    isSanityImage && src
+      ? urlFor(src).width(width).height(height).url()
+      : typeof src === 'string'
+        ? src
+        : '';
+
   useEffect(() => {
     setHasError(false);
     setIsLoading(true);
-  }, [src]);
+  }, [resolvedSrc]);
 
-  if (hasError || !src) {
+  if (hasError || !resolvedSrc) {
     return (
       <span className='image-with-fallback__placeholder'>
         {fallbackText ?? alt}
@@ -59,13 +75,13 @@ export function ImageWithFallback({
       )}
       <Image
         className={className}
-        src={src}
+        src={resolvedSrc}
         alt={alt}
         width={width}
         height={height}
         sizes={sizes}
         priority={priority}
-        unoptimized={unoptimized}
+        unoptimized={unoptimized || isSanityImage}
         onError={() => setHasError(true)}
         onLoad={() => setIsLoading(false)}
       />

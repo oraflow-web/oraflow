@@ -45,3 +45,9 @@ $radius-sm: 0.5rem;
 $radius-md: 1rem;
 $radius-lg: 1.5rem;
 $radius-xl: 2rem;
+
+$shadow-primary: 0 0 5px 1px $primary;
+$shadow-secondary: 0 0 5px 2px $secondary;
+$shadow-core-brand: 0 0 5px 1px $core-brand;
+$shadow-surface-brand: 0 0 5px 1px $surface-brand;
+$shadow-inset-surface-brand: inset 0 0 5px 1px $core-brand;

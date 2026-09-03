@@ -1,3 +1,9 @@
-.blog {
-  width: 100%;
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  &__article {
+    width: 30%;
+    flex: 1 1 auto;
+  }
 }

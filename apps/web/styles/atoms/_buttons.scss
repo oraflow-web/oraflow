@@ -35,23 +35,16 @@ button {
   text-align: center;
   padding: 1rem 1.5rem;
   border-radius: $radius-sm;
-  border-width: 2px;
-  border-style: solid;
   min-width: 10rem;
   max-width: 100%;
   &--primary {
     color: $core;
     background-color: $secondary;
-    border-color: transparent;
+    box-shadow: $shadow-inset-surface-brand;
   }
   &--secondary {
-    color: $surface;
-    background-color: $core-brand;
-    border-color: transparent;
-  }
-  &--outline {
     color: $core;
     background-color: $surface-brand;
-    border-color: $primary;
+    box-shadow: $shadow-primary;
   }
 }

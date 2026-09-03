@@ -10,7 +10,7 @@ export function LanguageSwitcher({
 }) {
   return (
     <details className='language-switcher'>
-      <summary className='btn btn--outline'>
+      <summary className='btn btn--secondary'>
         {langLabels[lang as keyof typeof langLabels]}
       </summary>
       <ul className='language-switcher__list'>
